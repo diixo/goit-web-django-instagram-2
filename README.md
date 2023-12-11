@@ -1,1 +1,1 @@
-# goit-web-django-instagram-2
+## goit-web-django-instagram-2 (extended version)
