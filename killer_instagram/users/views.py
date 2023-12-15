@@ -10,6 +10,11 @@ class RegisterView(View):
     form_class = RegisterForm
     template_name = "users/signup.html"
 
+    def dispatch(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            return redirect(to="app_instagram:root")
+        return super(RegisterView, self).dispatch(request, * args, ** kwargs)
+
     def get(self, request):
         return render(request, self.template_name, {"form": self.form_class})
 
